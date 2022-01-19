@@ -147,7 +147,7 @@ SecretDiary
   - addEntry()
   - getEntries()
 ```
-**Diagram** the secret diary example, and then **implement** the following requirements:
+**Diagram** the secret diary example, and then **implement** (write the code out as a JavaScript class) the following requirements:
 
 - Initially the `SecretDiary` class is locked, meaning `addEntry(str)` and `getEntries()` should throw an error.
 - When the user calls `unlock()`, `addEntry()` and `getEntries()` should work as desired.
