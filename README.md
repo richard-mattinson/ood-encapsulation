@@ -110,7 +110,7 @@ Bank
 SecretDiary
   - lock()
   - unlock()
-  - addEntry()
+  - addEntry(entry)
   - getEntries()
 ```
 
