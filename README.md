@@ -144,7 +144,7 @@ class Calculator {
 SecretDiary
   - lock()
   - unlock()
-  - addEntry()
+  - addEntry(entry)
   - getEntries()
 ```
 **Diagram** the secret diary example, and then **implement** (write the code out as a JavaScript class) the following requirements:
