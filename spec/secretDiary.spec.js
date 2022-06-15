@@ -35,7 +35,7 @@ describe('diary', () => {
     expect(result).toEqual(expected);
   });
 
-  fit("diary rejects an entry when locked", () => {
+  it("diary rejects an entry when locked", () => {
     // set up
     const expected = "Diary is locked!";
 
@@ -46,17 +46,41 @@ describe('diary', () => {
     expect(result).toEqual(expected);
   });
 
+  it("diary accepts an entry when unlocked", () => {
+    // set up
+    const expected = ["I weeded the garden today"];
+
+    secretDiary.unlock();
+    // execute
+    const result = secretDiary.addEntry("I weeded the garden today");
+    // verify
+    expect(result).toEqual(expected);
+  });
+  
+  it("retrieve all diary entries", () => {
+    // set up
+    const expected = [
+      "I weeded the garden today",
+      "I'm hoping I can create a second class",
+      "Sure glad I picked up a desk fan",
+    ];
+    secretDiary.unlock();
+    // execute
+    secretDiary.addEntry("I weeded the garden today");
+    secretDiary.addEntry("I'm hoping I can create a second class");
+    secretDiary.addEntry("Sure glad I picked up a desk fan");
+    result = secretDiary.getEntries();
+    // verify
+    expect(result).toEqual(expected);
+  })
+
   // it("diary is unlocked on request", () => {
   //   // set up
   //   // execute
   //   // verify
   // });
 
-  // it("diary accepts an entry when unlocked", () => {
-  //   // set up
-  //   // execute
-  //   // verify
-  // });
+
 
   // it("diary is locked on request", () => {
   //   // set up

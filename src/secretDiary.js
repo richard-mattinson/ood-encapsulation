@@ -30,6 +30,7 @@ class SecretDiary {
       return "Diary is locked!";
     } else {
       this.entries.push(entry);
+      return this.entries
     }
   }
 }
