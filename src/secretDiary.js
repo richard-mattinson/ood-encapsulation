@@ -10,7 +10,11 @@ class SecretDiary {
   }
 
   getEntries() {
-    return this.entries;
+        if (this.diaryUnlocked() === false) {
+      return "Diary is locked!";
+        } else {
+        return this.entries;
+    }
   }
 
   lock() {

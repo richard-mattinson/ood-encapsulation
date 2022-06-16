@@ -71,7 +71,20 @@ describe('diary', () => {
     secretDiary.addEntry("Sure glad I picked up a desk fan");
     result = secretDiary.getEntries();
     // verify
-    expect(result).toEqual(expected);
+    expect(result).toEqual(expected); 
+  });
+
+    it("fail to retrieve entries", () => {
+      // set up
+      const expected = "Diary is locked!";
+      // execute
+      secretDiary.addEntry("I weeded the garden today");
+      secretDiary.addEntry("I'm hoping I can create a second class");
+      secretDiary.addEntry("Sure glad I picked up a desk fan");
+      result = secretDiary.getEntries();
+      // verify
+      expect(result).toEqual(expected);
+    });
   })
 
   // it("diary is unlocked on request", () => {
@@ -87,4 +100,3 @@ describe('diary', () => {
   //   // execute
   //   // verify
   // });
-})
