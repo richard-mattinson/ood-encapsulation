@@ -74,7 +74,7 @@ describe('diary', () => {
     expect(result).toEqual(expected); 
   });
 
-    it("fail to retrieve entries", () => {
+    it("diary rejects get entries when locked", () => {
       // set up
       const expected = "Diary is locked!";
       // execute
